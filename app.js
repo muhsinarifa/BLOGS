@@ -9,6 +9,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.listen(3000);
+console.log('listening to 3000');
 //in blogroutes
 app.use(blogRoutes);
 app.use((req, res) => {
