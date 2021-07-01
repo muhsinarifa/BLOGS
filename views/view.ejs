@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Blogs</title>
+</head>
+<body>
+    <a href="/addblog"><button>Add new blog</button></a><br>
+    <% if(data.display!=undefined){ %>
+         <h3>Blogs till now....</h3>
+        <% data.display.map( (val) =>{ %> 
+            <hr>
+            <h3>BLOG NAME : <%= val.blog_name %> </h3> <%= val.blog_detail %> <br>   blog written by <%= val.blog_owner%> <a onclick="return confirm('Are you sure?')" href="/delete?bid=<%= val.id %>"><button>Delete</button></a> 
+            <hr>
+        <% }) %> 
+   <% }else { %>
+        <h2>No blogs to display</h2> 
+        <% } %>
+</body>
+</html>
